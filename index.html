@@ -1,0 +1,850 @@
+<!-- GOOGLE FONTS -->
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<!-- SWIPER -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<style>
+
+:root{
+
+--bg:#0f1724;
+--card:#182131;
+--pink:#c9929a;
+--pink2:#b07a80;
+--text:#f4f1eb;
+--muted:#8a8494;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--bg);
+
+font-family:'Cairo',sans-serif;
+
+overflow-x:hidden;
+
+color:var(--text);
+
+}
+
+body::before{
+
+content:'';
+
+position:fixed;
+
+width:500px;
+height:500px;
+
+background:#c9929a15;
+
+filter:blur(120px);
+
+top:-150px;
+right:-150px;
+
+border-radius:50%;
+
+z-index:-1;
+
+}
+
+nav{
+
+position:fixed;
+
+top:0;
+left:0;
+width:100%;
+
+padding:18px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:#0f1724d7;
+
+backdrop-filter:blur(15px);
+
+z-index:999;
+
+border-bottom:1px solid #ffffff10;
+
+}
+
+.logo{
+
+font-size:2rem;
+
+font-family:'Cormorant Garamond',serif;
+
+font-style:italic;
+
+font-weight:700;
+
+color:white;
+
+transform:rotate(-3deg);
+
+}
+
+.logo span{
+
+color:var(--pink);
+
+font-size:1.2em;
+
+position:relative;
+
+}
+
+.logo span::before{
+
+content:'';
+
+position:absolute;
+
+width:10px;
+height:10px;
+
+background:var(--pink);
+
+border-radius:50%;
+
+top:-10px;
+left:50%;
+
+transform:translateX(-50%);
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+font-size:.95rem;
+
+margin-left:25px;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:var(--pink);
+
+}
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:120px 8% 80px;
+
+}
+
+.hero h1{
+
+font-size:clamp(5rem,12vw,10rem);
+
+font-family:'Cormorant Garamond',serif;
+
+font-style:italic;
+
+font-weight:700;
+
+transform:rotate(-3deg);
+
+line-height:1;
+
+animation:float 4s ease-in-out infinite;
+
+}
+
+.hero h1 span{
+
+color:var(--pink);
+
+position:relative;
+
+}
+
+.hero h1 span::before{
+
+content:'';
+
+position:absolute;
+
+width:10px;
+height:10px;
+
+background:var(--pink);
+
+border-radius:50%;
+
+top:-10px;
+left:50%;
+
+transform:translateX(-50%);
+
+}
+
+.hero p{
+
+margin-top:20px;
+
+max-width:650px;
+
+color:var(--muted);
+
+font-size:1rem;
+
+line-height:1.9;
+
+}
+
+.hero-btns{
+
+margin-top:35px;
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.btn{
+
+padding:14px 35px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.btn-main{
+
+background:linear-gradient(135deg,var(--pink),var(--pink2));
+
+color:white;
+
+box-shadow:0 0 30px #c9929a55;
+
+}
+
+.btn-main:hover{
+
+transform:translateY(-4px);
+
+}
+
+.btn-ghost{
+
+border:1px solid #ffffff18;
+
+color:white;
+
+}
+
+.btn-ghost:hover{
+
+border-color:var(--pink);
+
+}
+
+section{
+
+padding:90px 8%;
+
+}
+
+.title{
+
+text-align:center;
+
+margin-bottom:50px;
+
+}
+
+.title span{
+
+color:var(--pink);
+
+letter-spacing:3px;
+
+font-size:.8rem;
+
+}
+
+.title h2{
+
+font-size:2.5rem;
+
+font-family:'Cormorant Garamond',serif;
+
+margin-top:10px;
+
+}
+
+.swiper{
+
+padding-bottom:60px;
+
+}
+
+.card{
+
+background:var(--card);
+
+border:1px solid #ffffff10;
+
+border-radius:25px;
+
+padding:35px 28px;
+
+transition:.4s;
+
+height:auto;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+border-color:#c9929a50;
+
+}
+
+.icon{
+
+width:60px;
+height:60px;
+
+border-radius:18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:1.5rem;
+
+background:#c9929a15;
+
+color:var(--pink);
+
+margin-bottom:20px;
+
+}
+
+.card h3{
+
+font-size:1.3rem;
+
+margin-bottom:10px;
+
+font-family:'Cormorant Garamond',serif;
+
+}
+
+.card p{
+
+color:var(--muted);
+
+font-size:.92rem;
+
+line-height:1.8;
+
+}
+
+.price{
+
+margin-top:18px;
+
+font-size:1.2rem;
+
+font-weight:700;
+
+color:var(--pink);
+
+}
+
+.example-btn{
+
+margin-top:18px;
+
+padding:10px 22px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,var(--pink),var(--pink2));
+
+color:white;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.example-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.modal{
+
+position:fixed;
+
+inset:0;
+
+background:#000000d9;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+}
+
+.modal-content{
+
+width:90%;
+
+max-width:850px;
+
+border-radius:25px;
+
+}
+
+.close{
+
+position:absolute;
+
+top:30px;
+right:40px;
+
+font-size:50px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+.contact{
+
+text-align:center;
+
+padding:100px 8%;
+
+}
+
+.contact h2{
+
+font-size:2.7rem;
+
+font-family:'Cormorant Garamond',serif;
+
+margin-bottom:15px;
+
+}
+
+.contact p{
+
+color:var(--muted);
+
+margin-bottom:35px;
+
+}
+
+.whatsapp{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:16px 38px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#25D366,#128C7E);
+
+color:white;
+
+text-decoration:none;
+
+font-weight:700;
+
+font-size:1rem;
+
+box-shadow:0 0 30px #25d36655;
+
+transition:.3s;
+
+}
+
+.whatsapp:hover{
+
+transform:translateY(-4px);
+
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+border-top:1px solid #ffffff10;
+
+color:var(--muted);
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0) rotate(-3deg);
+}
+
+50%{
+transform:translateY(-8px) rotate(-3deg);
+}
+
+100%{
+transform:translateY(0) rotate(-3deg);
+}
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:5rem;
+
+}
+
+nav{
+
+padding:15px 5%;
+
+}
+
+section{
+
+padding:70px 5%;
+
+}
+
+}
+
+</style>
+
+<nav>
+
+<div class="logo">
+AH<span>I</span>
+</div>
+
+<div>
+
+<a href="#services">الخدمات</a>
+
+<a href="#contact">تواصل</a>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<h1>
+AH<span>I</span>
+</h1>
+
+<p>
+خدمات أكاديمية ومهنية احترافية تشمل تصميم CV وعروض PowerPoint والأبحاث والتقارير والبوسترات العلمية والمزيد.
+</p>
+
+<div class="hero-btns">
+
+<a href="#services" class="btn btn-main">
+الخدمات
+</a>
+
+<a href="https://wa.me/201559495140" class="btn btn-ghost">
+WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="title">
+
+<span>SERVICES</span>
+
+<h2>
+الخدمات والأسعار
+</h2>
+
+</div>
+
+<div class="swiper servicesSwiper">
+
+<div class="swiper-wrapper">
+
+<div class="swiper-slide card">
+
+<div class="icon">
+<i class="fa-solid fa-file"></i>
+</div>
+
+<h3>تصميم CV</h3>
+
+<p>
+سيرة ذاتية احترافية بتصميم عصري.
+</p>
+
+<div class="price">
+80 — 150 EGP
+</div>
+
+<button onclick="openModal('cv-example.jpg')" class="example-btn">
+عرض مثال
+</button>
+
+</div>
+
+<div class="swiper-slide card">
+
+<div class="icon">
+<i class="fa-solid fa-chart-simple"></i>
+</div>
+
+<h3>PowerPoint</h3>
+
+<p>
+عروض تقديمية احترافية وجذابة.
+</p>
+
+<div class="price">
+100 — 400 EGP
+</div>
+
+<button onclick="openModal('ppt-example.jpg')" class="example-btn">
+عرض مثال
+</button>
+
+</div>
+
+<div class="swiper-slide card">
+
+<div class="icon">
+<i class="fa-solid fa-book"></i>
+</div>
+
+<h3>Research</h3>
+
+<p>
+أبحاث وتقارير أكاديمية.
+</p>
+
+<div class="price">
+150 — 800 EGP
+</div>
+
+<button onclick="openModal('research-example.jpg')" class="example-btn">
+عرض مثال
+</button>
+
+</div>
+
+<div class="swiper-slide card">
+
+<div class="icon">
+<i class="fa-solid fa-image"></i>
+</div>
+
+<h3>Scientific Posters</h3>
+
+<p>
+بوسترات علمية حديثة.
+</p>
+
+<div class="price">
+150 — 350 EGP
+</div>
+
+<button onclick="openModal('poster-example.jpg')" class="example-btn">
+عرض مثال
+</button>
+
+</div>
+
+<div class="swiper-slide card">
+
+<div class="icon">
+<i class="fa-solid fa-file-word"></i>
+</div>
+
+<h3>Word Formatting</h3>
+
+<p>
+تنسيق ملفات Word باحتراف.
+</p>
+
+<div class="price">
+70 — 200 EGP
+</div>
+
+<button onclick="openModal('word-example.jpg')" class="example-btn">
+عرض مثال
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>
+ابدأ مشروعك الآن
+</h2>
+
+<p>
+تواصل معنا عبر WhatsApp وسنرد عليك في أسرع وقت.
+</p>
+
+<a href="https://wa.me/201559495140" class="whatsapp">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+01559495140
+
+</a>
+
+</section>
+
+<footer>
+
+© 2025 AHI Creative
+
+</footer>
+
+<div id="exampleModal" class="modal">
+
+<span class="close" onclick="closeModal()">
+×
+</span>
+
+<img id="modalImage" class="modal-content">
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+new Swiper(".servicesSwiper",{
+
+slidesPerView:1,
+
+spaceBetween:25,
+
+loop:true,
+
+autoplay:{
+delay:2500,
+disableOnInteraction:false,
+},
+
+breakpoints:{
+
+768:{
+slidesPerView:2,
+},
+
+1100:{
+slidesPerView:3,
+}
+
+}
+
+});
+
+function openModal(img){
+
+document.getElementById("exampleModal").style.display="flex";
+
+document.getElementById("modalImage").src=img;
+
+}
+
+function closeModal(){
+
+document.getElementById("exampleModal").style.display="none";
+
+}
+
+</script>
