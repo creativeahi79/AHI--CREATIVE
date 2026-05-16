@@ -1,27 +1,15 @@
-<!-- GOOGLE FONTS -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AHI Creative</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- FONT AWESOME -->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-<!-- SWIPER -->
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
 <style>
-
-:root{
-
---bg:#0f1724;
---card:#182131;
---pink:#c9929a;
---pink2:#b07a80;
---text:#f4f1eb;
---muted:#8a8494;
-
-}
 
 *{
 margin:0;
@@ -31,581 +19,367 @@ scroll-behavior:smooth;
 }
 
 body{
-
-background:var(--bg);
-
 font-family:'Cairo',sans-serif;
-
+background:#0f1728;
+color:white;
 overflow-x:hidden;
-
-color:var(--text);
-
 }
 
 body::before{
-
 content:'';
-
 position:fixed;
+width:600px;
+height:600px;
+background:#d89ca733;
+filter:blur(140px);
+top:-200px;
+right:-200px;
+z-index:-1;
+}
 
+body::after{
+content:'';
+position:fixed;
 width:500px;
 height:500px;
-
-background:#c9929a15;
-
+background:#ffffff08;
 filter:blur(120px);
-
-top:-150px;
-right:-150px;
-
-border-radius:50%;
-
+bottom:-150px;
+left:-150px;
 z-index:-1;
-
 }
 
 nav{
-
 position:fixed;
-
 top:0;
-left:0;
 width:100%;
-
 padding:18px 8%;
-
 display:flex;
-
 justify-content:space-between;
-
 align-items:center;
-
-background:#0f1724d7;
-
+background:rgba(10,15,30,.7);
 backdrop-filter:blur(15px);
-
 z-index:999;
-
-border-bottom:1px solid #ffffff10;
-
+border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .logo{
-
-font-size:2rem;
-
+font-size:55px;
 font-family:'Cormorant Garamond',serif;
-
 font-style:italic;
-
 font-weight:700;
-
-color:white;
-
-transform:rotate(-3deg);
-
+letter-spacing:3px;
+color:#fff;
+position:relative;
+line-height:1;
 }
 
 .logo span{
-
-color:var(--pink);
-
-font-size:1.2em;
-
+color:#d9a2ac;
 position:relative;
-
+margin:0 2px;
 }
 
-.logo span::before{
-
+.logo span::after{
 content:'';
-
 position:absolute;
-
-width:10px;
-height:10px;
-
-background:var(--pink);
-
-border-radius:50%;
-
-top:-10px;
-left:50%;
-
-transform:translateX(-50%);
-
+width:120%;
+height:3px;
+background:#d9a2ac;
+top:55%;
+left:-10%;
+transform:rotate(-12deg);
+border-radius:10px;
 }
 
-nav a{
+.nav-links{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
 
-color:white;
-
+.nav-links a{
 text-decoration:none;
-
-font-size:.95rem;
-
-margin-left:25px;
-
+color:#ddd;
+font-size:15px;
 transition:.3s;
-
 }
 
-nav a:hover{
-
-color:var(--pink);
-
+.nav-links a:hover{
+color:#d9a2ac;
 }
 
 .hero{
-
 min-height:100vh;
-
 display:flex;
-
 flex-direction:column;
-
 justify-content:center;
-
 align-items:center;
-
 text-align:center;
-
-padding:120px 8% 80px;
-
+padding:130px 8% 80px;
 }
 
 .hero h1{
-
-font-size:clamp(5rem,12vw,10rem);
-
+font-size:110px;
 font-family:'Cormorant Garamond',serif;
-
 font-style:italic;
-
-font-weight:700;
-
-transform:rotate(-3deg);
-
 line-height:1;
-
-animation:float 4s ease-in-out infinite;
-
+margin-bottom:15px;
+animation:fadeUp 1s ease;
 }
 
 .hero h1 span{
-
-color:var(--pink);
-
+color:#d9a2ac;
 position:relative;
-
 }
 
-.hero h1 span::before{
-
+.hero h1 span::after{
 content:'';
-
 position:absolute;
-
-width:10px;
-height:10px;
-
-background:var(--pink);
-
-border-radius:50%;
-
-top:-10px;
-left:50%;
-
-transform:translateX(-50%);
-
+width:120%;
+height:4px;
+background:#d9a2ac;
+top:50%;
+left:-10%;
+transform:rotate(-12deg);
+border-radius:20px;
 }
 
 .hero p{
-
-margin-top:20px;
-
-max-width:650px;
-
-color:var(--muted);
-
-font-size:1rem;
-
+max-width:700px;
+font-size:19px;
 line-height:1.9;
-
+color:#cfcfcf;
+animation:fadeUp 1.3s ease;
 }
 
 .hero-btns{
-
 margin-top:35px;
-
 display:flex;
-
-gap:15px;
-
+gap:18px;
 flex-wrap:wrap;
-
 justify-content:center;
-
 }
 
-.btn{
-
-padding:14px 35px;
-
-border-radius:50px;
-
+.hero-btns a{
+padding:14px 34px;
+border-radius:40px;
 text-decoration:none;
-
 font-weight:700;
-
-transition:.3s;
-
+transition:.4s;
 }
 
-.btn-main{
+.btn1{
+background:#d9a2ac;
+color:#0f1728;
+}
 
-background:linear-gradient(135deg,var(--pink),var(--pink2));
+.btn1:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px #d9a2ac55;
+}
 
+.btn2{
+border:1px solid #ffffff25;
 color:white;
-
-box-shadow:0 0 30px #c9929a55;
-
 }
 
-.btn-main:hover{
-
-transform:translateY(-4px);
-
+.btn2:hover{
+background:#ffffff10;
 }
 
-.btn-ghost{
-
-border:1px solid #ffffff18;
-
-color:white;
-
-}
-
-.btn-ghost:hover{
-
-border-color:var(--pink);
-
-}
-
-section{
-
+.section{
 padding:90px 8%;
-
 }
 
-.title{
-
-text-align:center;
-
-margin-bottom:50px;
-
-}
-
-.title span{
-
-color:var(--pink);
-
-letter-spacing:3px;
-
-font-size:.8rem;
-
-}
-
-.title h2{
-
-font-size:2.5rem;
-
+.section-title{
+font-size:45px;
 font-family:'Cormorant Garamond',serif;
+margin-bottom:15px;
+text-align:center;
+}
 
-margin-top:10px;
-
+.section-sub{
+text-align:center;
+color:#bbbbbb;
+margin-bottom:50px;
 }
 
 .swiper{
-
-padding-bottom:60px;
-
+padding-bottom:40px;
 }
 
 .card{
-
-background:var(--card);
-
-border:1px solid #ffffff10;
-
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+padding:30px;
 border-radius:25px;
-
-padding:35px 28px;
-
 transition:.4s;
-
 height:auto;
-
+backdrop-filter:blur(8px);
 }
 
 .card:hover{
-
 transform:translateY(-10px);
-
-border-color:#c9929a50;
-
-}
-
-.icon{
-
-width:60px;
-height:60px;
-
-border-radius:18px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:1.5rem;
-
-background:#c9929a15;
-
-color:var(--pink);
-
-margin-bottom:20px;
-
+border-color:#d9a2ac;
 }
 
 .card h3{
-
-font-size:1.3rem;
-
-margin-bottom:10px;
-
-font-family:'Cormorant Garamond',serif;
-
+font-size:24px;
+margin-bottom:12px;
+color:#fff;
 }
 
 .card p{
-
-color:var(--muted);
-
-font-size:.92rem;
-
+color:#cfcfcf;
 line-height:1.8;
-
+font-size:15px;
 }
 
 .price{
-
 margin-top:18px;
-
-font-size:1.2rem;
-
+display:inline-block;
+background:#d9a2ac;
+color:#0f1728;
+padding:8px 18px;
+border-radius:30px;
 font-weight:700;
-
-color:var(--pink);
-
+font-size:14px;
 }
 
-.example-btn{
-
-margin-top:18px;
-
-padding:10px 22px;
-
-border:none;
-
-border-radius:50px;
-
-background:linear-gradient(135deg,var(--pink),var(--pink2));
-
-color:white;
-
-font-weight:700;
-
-cursor:pointer;
-
-transition:.3s;
-
+.examples{
+margin-top:20px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
 }
 
-.example-btn:hover{
-
-transform:translateY(-3px);
-
-}
-
-.modal{
-
-position:fixed;
-
-inset:0;
-
-background:#000000d9;
-
-display:none;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:9999;
-
-}
-
-.modal-content{
-
-width:90%;
-
-max-width:850px;
-
-border-radius:25px;
-
-}
-
-.close{
-
-position:absolute;
-
-top:30px;
-right:40px;
-
-font-size:50px;
-
-color:white;
-
-cursor:pointer;
-
+.examples img{
+width:100%;
+border-radius:15px;
+border:1px solid rgba(255,255,255,.08);
 }
 
 .contact{
-
 text-align:center;
-
 padding:100px 8%;
-
 }
 
 .contact h2{
-
-font-size:2.7rem;
-
+font-size:50px;
 font-family:'Cormorant Garamond',serif;
-
 margin-bottom:15px;
-
 }
 
 .contact p{
-
-color:var(--muted);
-
+color:#ccc;
 margin-bottom:35px;
-
 }
 
-.whatsapp{
+.contact-box{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
 
-display:inline-flex;
-
-align-items:center;
-
-gap:12px;
-
-padding:16px 38px;
-
-border-radius:50px;
-
-background:linear-gradient(135deg,#25D366,#128C7E);
-
-color:white;
-
+.contact-box a{
 text-decoration:none;
-
-font-weight:700;
-
-font-size:1rem;
-
-box-shadow:0 0 30px #25d36655;
-
+padding:14px 22px;
+border-radius:40px;
+background:rgba(255,255,255,.06);
+color:white;
 transition:.3s;
-
+font-size:14px;
+border:1px solid rgba(255,255,255,.07);
 }
 
-.whatsapp:hover{
-
+.contact-box a:hover{
+background:#d9a2ac;
+color:#0f1728;
 transform:translateY(-4px);
-
 }
 
 footer{
-
-padding:40px;
-
+padding:30px;
 text-align:center;
-
-border-top:1px solid #ffffff10;
-
-color:var(--muted);
-
+border-top:1px solid rgba(255,255,255,.08);
+color:#aaa;
+font-size:14px;
 }
 
-@keyframes float{
-
-0%{
-transform:translateY(0) rotate(-3deg);
+.whatsapp{
+position:fixed;
+bottom:25px;
+left:25px;
+width:65px;
+height:65px;
+border-radius:50%;
+background:#25d366;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+text-decoration:none;
+color:white;
+z-index:999;
+box-shadow:0 0 25px #25d36677;
+animation:pulse 2s infinite;
 }
 
-50%{
-transform:translateY(-8px) rotate(-3deg);
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
 }
 
-100%{
-transform:translateY(0) rotate(-3deg);
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
 }
-
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 @media(max-width:768px){
 
+.logo{
+font-size:40px;
+}
+
 .hero h1{
-
-font-size:5rem;
-
+font-size:70px;
 }
 
-nav{
-
-padding:15px 5%;
-
+.hero p{
+font-size:16px;
 }
 
-section{
-
-padding:70px 5%;
-
+.section-title{
+font-size:34px;
 }
 
 }
 
 </style>
+</head>
+
+<body>
+
+<a class="whatsapp" href="https://wa.me/201559495140">💬</a>
 
 <nav>
 
 <div class="logo">
-AH<span>I</span>
+AH<span>I</span> Creative
 </div>
 
-<div>
-
+<div class="nav-links">
 <a href="#services">الخدمات</a>
-
-<a href="#contact">تواصل</a>
-
+<a href="#contact">التواصل</a>
 </div>
 
 </nav>
@@ -613,150 +387,148 @@ AH<span>I</span>
 <section class="hero">
 
 <h1>
-AH<span>I</span>
+AH<span>I</span> Creative
 </h1>
 
 <p>
-خدمات أكاديمية ومهنية احترافية تشمل تصميم CV وعروض PowerPoint والأبحاث والتقارير والبوسترات العلمية والمزيد.
+من تصميم CV احترافي وعروض PowerPoint مميزة إلى الأبحاث والتقارير والبوسترات العلمية — كل خدماتك الأكاديمية والمهنية في مكان واحد.
 </p>
 
 <div class="hero-btns">
 
-<a href="#services" class="btn btn-main">
+<a href="#services" class="btn1">
 الخدمات
 </a>
 
-<a href="https://wa.me/201559495140" class="btn btn-ghost">
-WhatsApp
+<a href="https://wa.me/201559495140" class="btn2">
+تواصل الآن
 </a>
 
 </div>
 
 </section>
 
-<section id="services">
+<section class="section" id="services">
 
-<div class="title">
-
-<span>SERVICES</span>
-
-<h2>
+<h2 class="section-title">
 الخدمات والأسعار
 </h2>
 
-</div>
+<p class="section-sub">
+اسحب يمين وشوف كل الخدمات والأسعار وأمثلة للشغل
+</p>
 
 <div class="swiper servicesSwiper">
 
 <div class="swiper-wrapper">
 
-<div class="swiper-slide card">
+<div class="swiper-slide">
 
-<div class="icon">
-<i class="fa-solid fa-file"></i>
-</div>
+<div class="card">
 
 <h3>تصميم CV</h3>
 
 <p>
-سيرة ذاتية احترافية بتصميم عصري.
+تصميم سيرة ذاتية احترافية بشكل عصري وجذاب يساعدك في التقديم على الوظائف.
 </p>
 
 <div class="price">
-80 — 150 EGP
+80 - 300 جنيه
 </div>
 
-<button onclick="openModal('cv-example.jpg')" class="example-btn">
-عرض مثال
-</button>
+<div class="examples">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+</div>
 
 </div>
 
-<div class="swiper-slide card">
-
-<div class="icon">
-<i class="fa-solid fa-chart-simple"></i>
 </div>
+
+<div class="swiper-slide">
+
+<div class="card">
 
 <h3>PowerPoint</h3>
 
 <p>
-عروض تقديمية احترافية وجذابة.
+تصميم عروض احترافية ومتحركة مناسبة للمشاريع والجامعة والشغل.
 </p>
 
 <div class="price">
-100 — 400 EGP
+100 - 400 جنيه
 </div>
 
-<button onclick="openModal('ppt-example.jpg')" class="example-btn">
-عرض مثال
-</button>
+<div class="examples">
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop">
+</div>
 
 </div>
 
-<div class="swiper-slide card">
-
-<div class="icon">
-<i class="fa-solid fa-book"></i>
 </div>
+
+<div class="swiper-slide">
+
+<div class="card">
+
+<h3>Word & PDF</h3>
+
+<p>
+تنسيق ملفات وتحويل PDF إلى Word والعكس بجودة عالية.
+</p>
+
+<div class="price">
+50 - 200 جنيه
+</div>
+
+<div class="examples">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+</div>
+
+</div>
+
+<div class="swiper-slide">
+
+<div class="card">
 
 <h3>Research</h3>
 
 <p>
-أبحاث وتقارير أكاديمية.
+كتابة وتنسيق أبحاث وتقارير أكاديمية بطريقة احترافية.
 </p>
 
 <div class="price">
-150 — 800 EGP
+150 - 800+ جنيه
 </div>
 
-<button onclick="openModal('research-example.jpg')" class="example-btn">
-عرض مثال
-</button>
+<div class="examples">
+<img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1200&auto=format&fit=crop">
+</div>
 
 </div>
 
-<div class="swiper-slide card">
-
-<div class="icon">
-<i class="fa-solid fa-image"></i>
 </div>
 
-<h3>Scientific Posters</h3>
+<div class="swiper-slide">
+
+<div class="card">
+
+<h3>بوسترات علمية</h3>
 
 <p>
-بوسترات علمية حديثة.
+تصميم بوسترات وأغلفة أبحاث بشكل احترافي وجذاب.
 </p>
 
 <div class="price">
-150 — 350 EGP
+150 - 350 جنيه
 </div>
 
-<button onclick="openModal('poster-example.jpg')" class="example-btn">
-عرض مثال
-</button>
-
+<div class="examples">
+<img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?q=80&w=1200&auto=format&fit=crop">
 </div>
 
-<div class="swiper-slide card">
-
-<div class="icon">
-<i class="fa-solid fa-file-word"></i>
 </div>
-
-<h3>Word Formatting</h3>
-
-<p>
-تنسيق ملفات Word باحتراف.
-</p>
-
-<div class="price">
-70 — 200 EGP
-</div>
-
-<button onclick="openModal('word-example.jpg')" class="example-btn">
-عرض مثال
-</button>
 
 </div>
 
@@ -769,38 +541,54 @@ WhatsApp
 <section class="contact" id="contact">
 
 <h2>
-ابدأ مشروعك الآن
+تواصل معنا
 </h2>
 
 <p>
-تواصل معنا عبر WhatsApp وسنرد عليك في أسرع وقت.
+جاهزين لأي شغل أكاديمي أو تصميم احترافي ✨
 </p>
 
-<a href="https://wa.me/201559495140" class="whatsapp">
+<div class="contact-box">
 
-<i class="fa-brands fa-whatsapp"></i>
-
-01559495140
-
+<a href="mailto:creativeahi79@gmail.com">
+📧 creativeahi79@gmail.com
 </a>
+
+<a href="https://wa.me/201559495140">
+💬 01559495140
+</a>
+
+<a href="https://wa.me/201018653580">
+💬 01018653580
+</a>
+
+<a href="https://wa.me/201225287647">
+💬 01225287647
+</a>
+
+<a href="https://wa.me/201142107659">
+💬 01142107659
+</a>
+
+<a href="https://wa.me/201110504593">
+💬 01110504593
+</a>
+
+<a href="https://www.instagram.com/creativeahi79">
+📸 Instagram
+</a>
+
+<a href="https://www.facebook.com/share/1Cdus5nKLk/">
+📘 Facebook
+</a>
+
+</div>
 
 </section>
 
 <footer>
-
-© 2025 AHI Creative
-
+© 2025 AHI Creative — Quality Work, Your Success
 </footer>
-
-<div id="exampleModal" class="modal">
-
-<span class="close" onclick="closeModal()">
-×
-</span>
-
-<img id="modalImage" class="modal-content">
-
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -808,10 +596,8 @@ WhatsApp
 
 new Swiper(".servicesSwiper",{
 
-slidesPerView:1,
-
-spaceBetween:25,
-
+slidesPerView:1.1,
+spaceBetween:20,
 loop:true,
 
 autoplay:{
@@ -822,29 +608,18 @@ disableOnInteraction:false,
 breakpoints:{
 
 768:{
-slidesPerView:2,
+slidesPerView:2.2
 },
 
-1100:{
-slidesPerView:3,
+1024:{
+slidesPerView:3.2
 }
 
 }
 
 });
 
-function openModal(img){
-
-document.getElementById("exampleModal").style.display="flex";
-
-document.getElementById("modalImage").src=img;
-
-}
-
-function closeModal(){
-
-document.getElementById("exampleModal").style.display="none";
-
-}
-
 </script>
+
+</body>
+</html>
